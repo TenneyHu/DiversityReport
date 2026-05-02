@@ -1,168 +1,12 @@
-# Output Diversity Classification — 20 Case Studies
+# Output Diversity Classification — 20 Error Case Studies
 
 Model: `gpt-5.4-mini`  •  Dataset: `test_set_papers_diversity.csv` (219 rows)
 
-Categories: **TP** = gold yes, pred yes  •  **TN** = gold no, pred no  •  **FN** = gold yes, pred no  •  **FP** = gold no, pred yes
+Errors only: **FN** = gold yes, pred no (10 cases)  •  **FP** = gold no, pred yes (10 cases)
 
 ---
 
-## Case 1 — [TP] (row 109)
-
-**Title:** Bridging Information Gaps with Comprehensive Answers: Improving the Diversity and Informativeness of Follow-Up Questions
-
-**Gold label:** `yes`  •  **Predicted:** `yes`
-
-**Abstract:**
-
-> Generating diverse follow-up questions that uncover missing information remains challenging for conversational agents, particularly when they run on small, locally hosted models. To tackle this problem, we develop an information-gap{--}driven pipeline that contrasts the initial answer with an LLM-generated comprehensive answer, identifies the information gaps, and formulates gap-bridging follow-up questions. Applying the pipeline, we augment an existing dataset{--}FollowupQG{--}tenfold. Experiments show that models fine-tuned on the augmented dataset achieve significantly higher informativeness and diversity than variations trained on the original dataset. These findings indicate that our pipeline, which mirrors the human cognitive process of information seeking, provides an efficient distillation channel from state-of-the-art LLMs to smaller models, enabling resource-constrained conversational systems to generate more diverse and informative follow-up questions.
-
----
-
-## Case 2 — [TP] (row 69)
-
-**Title:** One fish, two fish, but not the whole sea: Alignment reduces language models' conceptual diversity
-
-**Gold label:** `yes`  •  **Predicted:** `yes`
-
-**Abstract:**
-
-> Researchers in social science and psychology have recently proposed using large language models (LLMs) as replacements for humans in behavioral research. In addition to arguments about whether LLMs accurately capture population-level patterns, this has raised questions about whether LLMs capture human-like conceptual diversity. Separately, it is debated whether post-training alignment (RLHF or RLAIF) affects models' internal diversity. Inspired by human studies, we use a new way of measuring the conceptual diversity of synthetically-generated LLM ``populations'' by relating the internal variability of simulated individuals to the population-level variability. We use this approach to evaluate non-aligned and aligned LLMs on two domains with rich human behavioral data. While no model reaches human-like diversity, aligned models generally display less diversity than their instruction fine-tuned counterparts. Our findings highlight potential trade-offs between increasing models' value alignment and decreasing the diversity of their conceptual representations.
-
----
-
-## Case 3 — [TP] (row 120)
-
-**Title:** Best Student Forcing: A Simple Training Mechanism in Adversarial Language Generation
-
-**Gold label:** `yes`  •  **Predicted:** `yes`
-
-**Abstract:**
-
-> Language models trained with Maximum Likelihood Estimation (MLE) have been considered as a mainstream solution in Natural Language Generation (NLG) for years. Recently, various approaches with Generative Adversarial Nets (GANs) have also been proposed. While offering exciting new prospects, GANs in NLG by far are nevertheless reportedly suffering from training instability and mode collapse, and therefore outperformed by conventional MLE models. In this work, we propose techniques for improving GANs in NLG, namely Best Student Forcing (BSF), a novel yet simple adversarial training mechanism in which generated sequences of high quality are selected as temporary ground-truth to further train the generator. We also use an ensemble of discriminators to increase training stability and sample diversity. Evaluation shows that the combination of BSF and multiple discriminators consistently performs better than previous GAN approaches over various metrics, and outperforms a baseline MLE in terms of Fr ́ech ́et Distance, a recently proposed metric capturing both sample quality and diversity.
-
----
-
-## Case 4 — [TP] (row 97)
-
-**Title:** Benchmarking and Improving Text-to-{SQL} Generation under Ambiguity
-
-**Gold label:** `yes`  •  **Predicted:** `yes`
-
-**Abstract:**
-
-> Research in Text-to-SQL conversion has been largely benchmarked against datasets where each text query corresponds to one correct SQL. However, natural language queries over real-life databases frequently involve significant ambiguity about the intended SQL due to overlapping schema names and multiple confusing relationship paths. To bridge this gap, we develop a novel benchmark called AmbiQT with over 3000 examples where each text is interpretable as two plausible SQLs due to lexical and/or structural ambiguity. When faced with ambiguity, an ideal top-$k$ decoder should generate all valid interpretations for possible disambiguation by the user. We evaluate several Text-to-SQL systems and decoding algorithms, including those employing state-of-the-art LLMs, and find them to be far from this ideal. The primary reason is that the prevalent beam search algorithm and its variants, treat SQL queries as a string and produce unhelpful token-level diversity in the top-$k$. We propose LogicalBeam, a new decoding algorithm that navigates the SQL logic space using a blend of plan-based template generation and constrained infilling. Counterfactually generated plans diversify templates while in-filling with a beam-search that branches solely on schema names provides value diversity. LogicalBeam is up to 2.5 times more effective than state-of-the-art models at generating all candidate SQLs in the top-$k$ ranked outputs. It also enhances the top-5 Exact and Execution Match Accuracies on SPIDER and Kaggle DBQA.
-
----
-
-## Case 5 — [TP] (row 64)
-
-**Title:** One world, one opinion? The superstar effect in {LLM} responses
-
-**Gold label:** `yes`  •  **Predicted:** `yes`
-
-**Abstract:**
-
-> As large language models (LLMs) are shaping the way information is shared and accessed online, their opinions have the potential to influence a wide audience. This study examines who is predicted by the studied LLMs as the most prominent figures across various fields, while using prompts in ten different languages to explore the influence of linguistic diversity. Our findings reveal low diversity in responses, with a small number of figures dominating recognition across languages (also known as the ``superstar effect''). These results highlight the risk of narrowing global knowledge representation when LLMs are used to retrieve subjective information.
-
----
-
-## Case 6 — [TN] (row 138)
-
-**Title:** {D}iv{L}ogic{E}val: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models
-
-**Gold label:** `no`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> Logic reasoning in natural language has been recognized as an important measure of human intelligence for Large Language Models (LLMs). Popular benchmarks may entangle multiple reasoning skills and thus provide unfaithful evaluations on the logic reasoning skill. Meanwhile, existing logic reasoning benchmarks are limited in language diversity and their distributions are deviated from the distribution of an ideal logic reasoning benchmark, which may lead to biased evaluation results. This paper thereby proposes a new classical logic benchmark DivLogicEval, consisting of natural sentences composed of diverse statements in a counterintuitive way. To ensure a more reliable evaluation, we also introduce a new evaluation metric that mitigates the influence of bias and randomness inherent in LLMs. Through experiments, we demonstrate the extent to which logical reasoning is required to answer the questions in DivLogicEval and compare the performance of different popular LLMs in conducting logical reasoning.
-
----
-
-## Case 7 — [TN] (row 199)
-
-**Title:** {F}a{MTEB}: Massive Text Embedding Benchmark in {P}ersian Language
-
-**Gold label:** `no`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> In this paper, we introduce a comprehensive benchmark for Persian (Farsi) text embeddings, built upon the Massive Text Embedding Benchmark (MTEB). Our benchmark includes 63 datasets spanning seven different tasks: classification, clustering, pair classification, reranking, retrieval, summary retrieval, and semantic textual similarity. The datasets are a combination of existing, translated, and newly generated (synthetic) data, offering a diverse and robust evaluation framework for Persian language models. All newly translated and synthetic datasets were rigorously evaluated by both humans and automated systems to ensure high quality and reliability. Given the growing adoption of text embedding models in chatbots, evaluation datasets are becoming an essential component of chatbot development and Retrieval-Augmented Generation (RAG) systems. As a contribution, we include chatbot evaluation datasets in the MTEB benchmark for the first time. Additionally, we introduce the novel task of summary retrieval, which is not included in the standard MTEB tasks. Another key contribution of this work is the introduction of a substantial number of new Persian-language NLP datasets for both training and evaluation, many of which have no existing counterparts in Persian. We evaluate the performance of several Persian and multilingual embedding models across a wide range of tasks. This work presents an open-source benchmark with datasets, accompanying code, and a public leaderboard.
-
----
-
-## Case 8 — [TN] (row 59)
-
-**Title:** Inverse Reinforcement Learning Meets Large Language Model Alignment
-
-**Gold label:** `no`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> In the era of Large Language Models (LLMs), alignment has emerged as a fundamental yet challenging problem in the pursuit of more reliable, controllable, and capable machine intelligence. The recent success of reasoning models and conversational AI systems has underscored the critical role of reinforcement learning (RL) in enhancing these systems, driving increased research interest at the intersection of RL and LLM alignment.This tutorial will provide a comprehensive review of recent advances in LLM alignment through the lens of inverse reinforcement learning (IRL), emphasizing the distinctions between RL techniques employed in LLM alignment and those in conventional RL tasks. In particular, we highlight the necessity of constructing neural reward models from human data and discuss the formal and practical implications of this paradigm shift. The tutorial will begin with fundamental concepts in RL to provide a foundation for the audience unfamiliar with the field. We then examine recent advances in this research agenda, discussing key challenges and opportunities in conducting IRL for LLM alignment. Beyond methodological considerations, we explore practical aspects, including datasets, benchmarks, evaluation metrics, infrastructure, and computationally efficient training and inference techniques.Finally, we draw insights from the literature on sparse-reward RL to identify open questions and potential research directions. By synthesizing findings from diverse studies, we aim to provide a structured and critical overview of the field, highlight unresolved challenges, and outline promising future directions for improving LLM alignment through RL and IRL techniques.
-
----
-
-## Case 9 — [TN] (row 98)
-
-**Title:** Cross-Cultural Transfer of Commonsense Reasoning in {LLM}s: Evidence from the {A}rab World
-
-**Gold label:** `no`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> Large language models (LLMs) often reflect Western-centric biases, limiting their effectiveness in diverse cultural contexts. Although some work has explored cultural alignment, the potential for cross-cultural transfer, using alignment in one culture to improve performance in others, remains underexplored. This paper investigates cross-cultural transfer of commonsense reasoning within the Arab world, where linguistic and historical similarities coexist with local cultural differences. Using a culturally grounded commonsense reasoning dataset covering 13 Arab countries, we evaluate lightweight alignment methods such as in-context learning (ICL) and demonstration-based reinforcement (DITTO), alongside baselines like supervised fine-tuning (SFT) and direct preference Optimization (DPO). Our results show that merely 12 culture-specific examples from one country can improve performance in others by 10{\%} on average, within multilingual models. In addition, we demonstrate that out-of-culture demonstrations from Indonesia and US contexts can match or surpass in-culture alignment for MCQ reasoning, highlighting cultural commonsense transferability beyond Arab world. These findings demonstrate that efficient cross-cultural alignment is possible and offer a promising approach to adapt LLMs to low-resource cultural settings.
-
----
-
-## Case 10 — [TN] (row 15)
-
-**Title:** Culture is Everywhere: A Call for Intentionally Cultural Evaluation
-
-**Gold label:** `no`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> The prevailing ``trivia-centered paradigm'' for evaluating the cultural alignment of large language models (LLMs) is increasingly inadequate as these models become more advanced and widely deployed. Existing approaches typically reduce culture to static facts or values, testing models via multiple-choice or short-answer questions that treat culture as isolated trivia. Such methods neglect the pluralistic and interactive realities of culture, and overlook how cultural assumptions permeate even ostensibly ``neutral'' evaluation settings.In this position paper, we argue for intentionally cultural evaluation: an approach that systematically examines the cultural assumptions embedded in all aspects of evaluation, not just in explicitly cultural tasks. We systematically characterize the what, how, and circumstances by which culturally contingent considerations arise in evaluation, and emphasize the importance of researcher positionality for fostering inclusive, culturally aligned NLP research. Finally, we discuss implications and future directions for moving beyond current benchmarking practices, discovering important applications that we don{'}t know exist, and involving communities in evaluation design through HCI-inspired participatory methodologies.
-
----
-
-## Case 11 — [FN] (row 55)
-
-**Title:** {L}im{R}ank: Less is More for Reasoning-Intensive Information Reranking
-
-**Gold label:** `yes`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> Existing approaches typically rely on large-scale fine-tuning to adapt LLMs for information reranking tasks, which is computationally expensive. In this work, we demonstrate that modern LLMs can be effectively adapted using only minimal, high-quality supervision. To enable this, we design LIMRANK-SYNTHESIZER, a reusable and open-source pipeline for generating diverse, challenging, and realistic reranking examples. Using this synthetic data, we fine-tune our reranker model, LIMRANK. We evaluate LIMRANK on two challenging benchmarks, i.e., BRIGHT for reasoning-intensive retrieval and FollowIR for instruction-following retrieval. Our experiments demonstrate that LIMRANK achieves competitive performance, while being trained on less than 5{\%} of the data typically used in prior work. Further ablation studies demonstrate the effectiveness of LIMRANK-SYNTHESIZER and the strong generalization capabilities of LIMRANK across downstream tasks, including scientific literature search and retrieval-augmented generation for knowledge-intensive problem solving.
-
----
-
-## Case 12 — [FN] (row 213)
-
-**Title:** {PERSONA}: A Reproducible Testbed for Pluralistic Alignment
-
-**Gold label:** `yes`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> The rapid advancement of language models (LMs) necessitates robust alignment with diverse user values. However, current preference optimization approaches often fail to capture the plurality of user opinions, instead reinforcing majority viewpoints and marginalizing minority perspectives. We introduce PERSONA, a reproducible test bed designed to evaluate and improve pluralistic alignment of LMs. We procedurally generate diverse user profiles from US census data, resulting in 1,586 synthetic personas with varied demographic and idiosyncratic attributes. We then generate a large-scale evaluation dataset containing 3,868 prompts and 317,200 feedback pairs obtained from our synthetic personas. Leveraging this dataset, we systematically evaluate LM capabilities in role-playing diverse users, verified through human judges, and the establishment of both a benchmark, PERSONA Bench, for pluralistic alignment approaches as well as an extensive dataset to create new and future benchmarks.
-
----
-
-## Case 13 — [FN] (row 46)
-
-**Title:** What did you say? Generating Child-Directed Speech Questions to Train {LLM}s
-
-**Gold label:** `yes`  •  **Predicted:** `no`
-
-**Abstract:**
-
-> Child-Directed Speech (CDS) holds unique linguistic properties that distinguish it from other types of textual corpora. Language models trained using CDS often obtain superior results compared with the same size of different types of data. Several studies have aimed at modifying non-CDS data to mimic its linguistic properties to match the hypothesized advantageous aspects of CDS. Here, we propose to adapt the non-CDS portions of the training data to include questions similar to CDS interaction. We modify the data by adding artificially generated questions to the data and methodically analyzing the change in performance using each modified dataset. Our results show that artificial question generation strongly depends on the properties of the original dataset. While the performance improves for question-related measures, the overall performance is negatively affected as a result of the reduced syntactic diversity.
-
----
-
-## Case 14 — [FN] (row 0)
+## Case 1 — [FN] (row 0)
 
 **Title:** {MURI}: High-Quality Instruction Tuning Datasets for Low-Resource Languages via Reverse Instructions
 
@@ -174,7 +18,67 @@ Categories: **TP** = gold yes, pred yes  •  **TN** = gold no, pred no  •  **
 
 ---
 
-## Case 15 — [FN] (row 74)
+## Case 2 — [FN] (row 11)
+
+**Title:** {W}at{ME}: Towards Lossless Watermarking Through Lexical Redundancy
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> Text watermarking has emerged as a pivotal technique for identifying machine-generated text. However, existing methods often rely on arbitrary vocabulary partitioning during decoding to embed watermarks, which compromises the availability of suitable tokens and significantly degrades the quality of responses. This study assesses the impact of watermarking on different capabilities of large language models (LLMs) from a cognitive science lens. Our finding highlights a significant disparity; knowledge recall and logical reasoning are more adversely affected than language generation. These results suggest a more profound effect of watermarking on LLMs than previously understood. To address these challenges, we introduce Watermarking with Mutual Exclusion (WatME), a novel approach leveraging linguistic prior knowledge of inherent lexical redundancy in LLM vocabularies to seamlessly integrate watermarks. Specifically, WatME dynamically optimizes token usage during the decoding process by applying a mutually exclusive rule to the identified lexical redundancies. This strategy effectively prevents the unavailability of appropriate tokens and preserves the expressive power of LLMs. We provide both theoretical analysis and empirical evidence showing that WatME effectively preserves the diverse capabilities of LLMs while ensuring watermark detectability.
+
+---
+
+## Case 3 — [FN] (row 16)
+
+**Title:** User Feedback Alignment for {LLM}-powered Exploration in Large-scale Recommendation Systems
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> Exploration, the act of broadening user experiences beyond their established preferences, is challenging in large-scale recommendation systems due to feedback loops and limited signals on user exploration patterns. Large Language Models (LLMs) offer potential solutions by leveraging their world knowledge to recommend novel content outside these loops. A key challenge is aligning LLMs with user preferences while preserving their knowledge and reasoning. To enhance planning for new user interests using LLMs, this paper introduces a novel approach that combines hierarchical planning with LLM inference-time scaling. This method aims to improve recommendation relevancy without compromising novelty. We decouple novelty and user-alignment, training separate LLMs for each objective. We then scale up the novelty-focused LLM{'}s inference and select the best-of-n predictions using the user-aligned LLM. Live experiments demonstrate efficacy, showing significant gains in both user satisfaction (measured by watch activity and active user counts) and exploration diversity.
+
+---
+
+## Case 4 — [FN] (row 41)
+
+**Title:** Fuse It More Deeply! A Variational Transformer with Layer-Wise Latent Variable Inference for Text Generation
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> The past several years have witnessed Variational Auto-Encoder{'}s superiority in various text generation tasks. However, due to the sequential nature of the text, auto-regressive decoders tend to ignore latent variables and then reduce to simple language models, known as the $\textit{KL vanishing}$ problem, which would further deteriorate when VAE is combined with Transformer-based structures. To ameliorate this problem, we propose Della, a novel variational Transformer framework. Della learns a series of layer-wise latent variables with each inferred from those of lower layers and tightly coupled with the hidden states by low-rank tensor product. In this way, Della forces these posterior latent variables to be fused deeply with the whole computation path and hence incorporate more information. We theoretically demonstrate that our method can be regarded as entangling latent variables to avoid posterior information decrease through layers, enabling Della to get higher non-zero KL values even without any annealing or thresholding tricks. Experiments on four unconditional and three conditional generation tasks show that Della could better alleviate KL vanishing and improve both quality and diversity compared to several strong baselines.
+
+---
+
+## Case 5 — [FN] (row 52)
+
+**Title:** Improve Student{'}s Reasoning Generalizability through Cascading Decomposed {C}o{T}s Distillation
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> Large language models (LLMs) exhibit enhanced reasoning at larger scales, driving efforts to distill these capabilities into smaller models via teacher-student learning.Previous works simply fine-tune student models on teachers' generated Chain-of-Thoughts (CoTs) data. Although these methods enhance in-domain (IND) reasoning performance, they struggle to generalize to out-of-domain (OOD) tasks.We believe that the widespread spurious correlations between questions and answers may lead the model to preset a specific answer which restricts the diversity and generalizability of its reasoning process.In this paper, we propose \textbf{Cas}cading Decomposed \textbf{Co}Ts \textbf{D}istillation (CasCoD) to address these issues by decomposing the traditional single-step learning process into two cascaded learning steps. Specifically, by restructuring the training objectives{---}removing the answer from outputs and concatenating the question with the rationale as input{---}CasCoD{'}s two-step learning process ensures that students focus on learning rationales without interference from the preset answers, thus improving reasoning generalizability. Extensive experiments demonstrate the effectiveness of CasCoD on both IND and OOD benchmark reasoning datasets
+
+---
+
+## Case 6 — [FN] (row 55)
+
+**Title:** {L}im{R}ank: Less is More for Reasoning-Intensive Information Reranking
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> Existing approaches typically rely on large-scale fine-tuning to adapt LLMs for information reranking tasks, which is computationally expensive. In this work, we demonstrate that modern LLMs can be effectively adapted using only minimal, high-quality supervision. To enable this, we design LIMRANK-SYNTHESIZER, a reusable and open-source pipeline for generating diverse, challenging, and realistic reranking examples. Using this synthetic data, we fine-tune our reranker model, LIMRANK. We evaluate LIMRANK on two challenging benchmarks, i.e., BRIGHT for reasoning-intensive retrieval and FollowIR for instruction-following retrieval. Our experiments demonstrate that LIMRANK achieves competitive performance, while being trained on less than 5{\%} of the data typically used in prior work. Further ablation studies demonstrate the effectiveness of LIMRANK-SYNTHESIZER and the strong generalization capabilities of LIMRANK across downstream tasks, including scientific literature search and retrieval-augmented generation for knowledge-intensive problem solving.
+
+---
+
+## Case 7 — [FN] (row 74)
 
 **Title:** Bone Soups: A Seek-and-Soup Model Merging Approach for Controllable Multi-Objective Generation
 
@@ -186,31 +90,139 @@ Categories: **TP** = gold yes, pred yes  •  **TN** = gold no, pred no  •  **
 
 ---
 
-## Case 16 — [FP] (row 2)
+## Case 8 — [FN] (row 96)
 
-**Title:** {F}air{C}o{T}: Enhancing Fairness in Text-to-Image Generation via Chain of Thought Reasoning with Multimodal Large Language Models
+**Title:** Cross-Lingual Transfer of Debiasing and Detoxification in Multilingual {LLM}s: An Extensive Investigation
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> Recent generative large language models (LLMs) show remarkable performance in non-English languages, but when prompted in those languages they tend to express higher harmful social biases and toxicity levels. Prior work has shown that finetuning on specialized datasets can mitigate this behavior, and doing so in English can transfer to other languages. In this work, we investigate the impact of different finetuning methods on the model{'}s bias and toxicity, but also on its ability to produce fluent and diverse text. We reduce biases by finetuning on curated non-harmful text, but find only direct preference optimization to be effective for mitigating toxicity. The mitigation caused by applying these methods in English also transfers to non-English languages. We find evidence that the extent to which transfer takes place can be predicted by the amount of data in a given language present in the model{'}s pretraining data. However, this transfer of bias and toxicity mitigation often comes at the expense of decreased language generation ability in non-English languages, highlighting the importance of developing language-specific bias and toxicity mitigation methods.
+
+---
+
+## Case 9 — [FN] (row 166)
+
+**Title:** Exploring In-context Example Generation for Machine Translation
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> Large language models (LLMs) have demonstrated strong performance across various tasks, leveraging their exceptional in-context learning ability with only a few examples.Accordingly, the selection of optimal in-context examples has been actively studied in the field of machine translation.However, these studies presuppose the presence of a demonstration pool with human-annotated pairs, making them less applicable to low-resource languages where such an assumption is challenging to meet.To overcome this limitation, this paper explores the research direction of in-context example generation for machine translation.Specifically, we propose Demonstration Augmentation for Translation (DAT), a simple yet effective approach that generates example pairs without relying on any external resources.This method builds upon two prior criteria, relevance and diversity, which have been highlighted in previous work as key factors for in-context example selection.Through experiments and analysis on low-resource languages where human-annotated pairs are scarce, we show that DAT achieves superior translation quality compared to the baselines.Furthermore, we investigate the potential of progressively accumulating generated pairs during test time to build and reuse a demonstration pool. Our implementation is publicly available at https://github.com/aiclaudev/DAT.
+
+---
+
+## Case 10 — [FN] (row 213)
+
+**Title:** {PERSONA}: A Reproducible Testbed for Pluralistic Alignment
+
+**Gold label:** `yes`  •  **Predicted:** `no`
+
+**Abstract:**
+
+> The rapid advancement of language models (LMs) necessitates robust alignment with diverse user values. However, current preference optimization approaches often fail to capture the plurality of user opinions, instead reinforcing majority viewpoints and marginalizing minority perspectives. We introduce PERSONA, a reproducible test bed designed to evaluate and improve pluralistic alignment of LMs. We procedurally generate diverse user profiles from US census data, resulting in 1,586 synthetic personas with varied demographic and idiosyncratic attributes. We then generate a large-scale evaluation dataset containing 3,868 prompts and 317,200 feedback pairs obtained from our synthetic personas. Leveraging this dataset, we systematically evaluate LM capabilities in role-playing diverse users, verified through human judges, and the establishment of both a benchmark, PERSONA Bench, for pluralistic alignment approaches as well as an extensive dataset to create new and future benchmarks.
+
+---
+
+## Case 11 — [FP] (row 27)
+
+**Title:** Augmenting Compliance-Guaranteed Customer Service Chatbots: Context-Aware Knowledge Expansion with Large Language Models
 
 **Gold label:** `no`  •  **Predicted:** `yes`
 
 **Abstract:**
 
-> In the domain of text-to-image generative models, biases inherent in training datasets often propagate into generated content, posing significant ethical challenges, particularly in socially sensitive contexts. We introduce FairCoT, a novel framework that enhances fairness in text-to-image models through Chain-of-Thought (CoT) reasoning within multimodal generative large language models. FairCoT employs iterative CoT refinement to systematically mitigate biases, and dynamically adjusts textual prompts in real time, ensuring diverse and equitable representation in generated images. By integrating iterative reasoning processes, FairCoT addresses the limitations of zero-shot CoT in sensitive scenarios, balancing creativity with ethical responsibility. Experimental evaluations across popular text-to-image systems{---}including DALL-E and various Stable Diffusion variants{---}demonstrate that FairCoT significantly enhances fairness and diversity without sacrificing image quality or semantic fidelity. By combining robust reasoning, lightweight deployment, and extensibility to multiple models, FairCoT represents a promising step toward more socially responsible and transparent AI-driven content generation.
+> Retrieval-based chatbots leverage human-verified Q{\&}A knowledge to deliver accurate, verifiable responses, making them ideal for customer-centric applications where compliance with regulatory and operational standards is critical. To effectively handle diverse customer inquiries, augmenting the knowledge base with ``similar questions'' that retain semantic meaning while incorporating varied expressions is a cost-effective strategy. In this paper, we introduce the Similar Question Generation (SQG) task for LLM training and inference, proposing context-aware approaches to enable comprehensive semantic exploration and enhanced alignment with source question-answer relationships. We formulate optimization techniques for constructing in-context prompts and selecting an optimal subset of similar questions to expand chatbot knowledge under budget constraints. Both quantitative and human evaluations validate the effectiveness of these methods, achieving a 92{\%} user satisfaction rate in a deployed chatbot system, reflecting an 18{\%} improvement over the unaugmented baseline. These findings highlight the practical benefits of SQG and emphasize the potential of LLMs, not as direct chatbot interfaces, but in supporting non-generative systems for hallucination-free, compliance-guaranteed applications.
 
 ---
 
-## Case 17 — [FP] (row 178)
+## Case 12 — [FP] (row 37)
 
-**Title:** Automated Progressive Red Teaming
+**Title:** ``What is the value of {templates}?'' Rethinking Document Information Extraction Datasets for {LLM}s
 
 **Gold label:** `no`  •  **Predicted:** `yes`
 
 **Abstract:**
 
-> Ensuring the safety of large language models (LLMs) is paramount, yet identifying potential vulnerabilities is challenging. While manual red teaming is effective, it is time-consuming, costly and lacks scalability. Automated red teaming (ART) offers a more cost-effective alternative, automatically generating adversarial prompts to expose LLM vulnerabilities. However, in current ART efforts, a robust framework is absent, which explicitly frames red teaming as an effectively learnable task. To address this gap, we propose Automated Progressive Red Teaming (APRT) as an effectively learnable framework. APRT leverages three core modules: an Intention Expanding LLM that generates diverse initial attack samples, an Intention Hiding LLM that crafts deceptive prompts, and an Evil Maker to manage prompt diversity and filter ineffective samples. The three modules collectively and progressively explore and exploit LLM vulnerabilities through multi-round interactions. In addition to the framework, we further propose a novel indicator, Attack Effectiveness Rate (AER) to mitigate the limitations of existing evaluation metrics. By measuring the likelihood of eliciting unsafe but seemingly helpful responses, AER aligns closely with human evaluations. Extensive experiments with both automatic and human evaluations, demonstrate the effectiveness of APRT across both open- and closed-source LLMs. Specifically, APRT effectively elicits 54{\%} unsafe yet useful responses from Meta{'}s Llama-3-8B-Instruct, 50{\%} from GPT-4o (API access), and 39{\%} from Claude-3.5 (API access), showcasing its robust attack capability and transferability across LLMs (especially from open-source LLMs to closed-source LLMs). The code and seed data are available at \url{https://github.com/tjunlp-lab/APRT}.
+> The rise of large language models (LLMs) for visually rich document understanding (VRDU) has kindled a need for prompt-response, document-based datasets. As annotating new datasets from scratch is labor-intensive, the existing literature has generated prompt-response datasets from available resources using simple templates. For the case of key information extraction (KIE), one of the most common VRDU tasks, past work has typically employed the template ``What is the value for the key?''. However, given the variety of questions encountered in the wild, simple and uniform templates are insufficient for creating robust models in research and industrial contexts. In this work, we present K2Q, a diverse collection of five datasets converted from KIE to a prompt-response format using a plethora of bespoke templates. The questions in K2Q can span multiple entities and be extractive or boolean. We empirically compare the performance of seven baseline generative models on K2Q with zero-shot prompting. We further compare three of these models when training on K2Q versus training on simpler templates to motivate the need of our work. We find that creating diverse and intricate KIE questions enhances the performance and robustness of VRDU models. We hope this work encourages future studies on data quality for generative model training.
 
 ---
 
-## Case 18 — [FP] (row 177)
+## Case 13 — [FP] (row 119)
+
+**Title:** {MP}2{D}: An Automated Topic Shift Dialogue Generation Framework Leveraging Knowledge Graphs
+
+**Gold label:** `no`  •  **Predicted:** `yes`
+
+**Abstract:**
+
+> Despite advancements in on-topic dialogue systems, effectively managing topic shifts within dialogues remains a persistent challenge, largely attributed to the limited availability of training datasets. To address this issue, we propose Multi-Passage to Dialogue (MP2D), a data generation framework that automatically creates conversational question-answering datasets with natural topic transitions. By leveraging the relationships between entities in a knowledge graph, MP2D maps the flow of topics within a dialogue, effectively mirroring the dynamics of human conversation. It retrieves relevant passages corresponding to the topics and transforms them into dialogues through the passage-to-dialogue method. Through quantitative and qualitative experiments, we demonstrate MP2D{'}s efficacy in generating dialogue with natural topic shifts. Furthermore, this study introduces a novel benchmark for topic shift dialogues, TS-WikiDialog. Utilizing the dataset, we demonstrate that even Large Language Models (LLMs) struggle to handle topic shifts in dialogue effectively, and we showcase the performance improvements of models trained on datasets generated by MP2D across diverse topic shift dialogue tasks.
+
+---
+
+## Case 14 — [FP] (row 134)
+
+**Title:** {F}uzz{A}ug: Data Augmentation by Coverage-guided Fuzzing for Neural Test Generation
+
+**Gold label:** `no`  •  **Predicted:** `yes`
+
+**Abstract:**
+
+> Testing is essential to modern software engineering for building reliable software.Given the high costs of manually creating test cases,automated test case generation, particularly methods utilizing large language models,has become increasingly popular.These neural approaches generate semantically meaningful tests that are more maintainable compared with traditional automated testing methods such as fuzzing.However, the diversity and volume of unit tests in current datasets are limited, especially for newer but important languages.In this paper, we present a novel data augmentation technique, *FuzzAug*,that brings the benefits of fuzzing to large language models by incorporating valid testing semantics and providing diverse coverage-guided inputs.Doubling the size of training datasets,FuzzAug improves performance over the baselines significantly.This technique demonstrates the potential of introducing prior knowledge from dynamic software analysisto improve neural test generation,offering significant enhancements in this task.Our code is open-sourced at https://github.com/SecurityLab-UCD/FuzzAug.
+
+---
+
+## Case 15 — [FP] (row 135)
+
+**Title:** The Literary Canons of Large-Language Models: An Exploration of the Frequency of Novel and Author Generations Across Gender, Race and Ethnicity, and Nationality
+
+**Gold label:** `no`  •  **Predicted:** `yes`
+
+**Abstract:**
+
+> Large language models (LLMs) are an emerging site for computational literary and cultural analysis. While such research has focused on applying LLMs to the analysis of literary text passages, the probabilistic mechanism used by these models for text generation lends them to also understanding literary and cultural trends. Indeed, we can imagine LLMs as constructing their own ``literary canons'' by encoding particular authors and book titles with high probability distributions around relevant words and text. This paper explores the frequency with which certain literary titles and authors are generated by a selection of popular proprietary and open-source models and compares it to existing conceptions of literary canon. It investigates the diversity of author mentions across gender, ethnicity, nationality as well as LLMs' ability to accurately report such characteristics. We demonstrate that the literary canons of popular large-language models are generally aligned with the Western literary canon in that they slightly prioritize male authors and overwhelmingly prioritize White American and British authors.
+
+---
+
+## Case 16 — [FP] (row 161)
+
+**Title:** Enhanced Data Synthesis for {LLM} through Reasoning Structures Generated by Hierarchical {GF}low{N}et
+
+**Gold label:** `no`  •  **Predicted:** `yes`
+
+**Abstract:**
+
+> Large language models (LLMs) excel in problem-solving but require training data with diverse reasoning processes. Existing methods mainly optimize instruction-response pairs but lack a systematic design for the underlying reasoning structure. This paper proposes RSS: a Reasoning Structure driven data Synthesis method. We first proactively develop a hierarchical GFlowNet to construct reasoning structures efficiently through a coarse-to-fine directed acyclic graph (DAG) growth process. Then reasoning DAGs are leveraged to actively guide the instruction generation via an iterative suggester-editor workflow and enhance response quality using a structure-aware strategy. Experiments show that LLMs trained on our synthetic datasets achieve 48.50{\%}, 84.00{\%}, 79.90{\%} for AlpacaEval2, GSM8K and HumanEval, outperforming existing data synthesis methods.
+
+---
+
+## Case 17 — [FP] (row 168)
+
+**Title:** Many Heads Are Better Than One: Improved Scientific Idea Generation by A {LLM}-Based Multi-Agent System
+
+**Gold label:** `no`  •  **Predicted:** `yes`
+
+**Abstract:**
+
+> The rapid advancement of scientific progress requires innovative tools that can accelerate knowledge discovery. Although recent AI methods, particularly large language models (LLMs), have shown promise in tasks such as hypothesis generation and experimental design, they fall short of replicating the collaborative nature of real-world scientific practices, where diverse experts work together in teams to tackle complex problems. To address the limitations, we propose an LLM-based multi-agent system, i.e., Virtual Scientists (VIRSCI), designed to mimic the teamwork inherent in scientific research. VIRSCI organizes a team of agents to collaboratively generate, evaluate, and refine research ideas. Through comprehensive experiments, we demonstrate that this multi-agent approach outperforms the state-of-the-art method in producing novel scientific ideas. We further investigate the collaboration mechanisms that contribute to its tendency to produce ideas with higher novelty, offering valuable insights to guide future research and illuminating pathways toward building a robust system for autonomous scientific discovery. The code is available at https://github.com/open-sciencelab/Virtual-Scientists.
+
+---
+
+## Case 18 — [FP] (row 169)
+
+**Title:** Multi-{LLM} Text Summarization
+
+**Gold label:** `no`  •  **Predicted:** `yes`
+
+**Abstract:**
+
+> In this work, we propose a Multi-LLM summarization framework, and investigate two different multi-LLM strategies including centralized and decentralized. Our multi-LLM summarization framework has two fundamentally important steps at each round of conversation: generation and evaluation. These steps are different depending on whether our multi-LLM decentralized summarization is used or centralized. In both our multi-LLM decentralized and centralized strategies, we have k different LLMs that generate diverse summaries of the text. However, during evaluation, our multi-LLM centralized summarization approach leverages a single LLM to evaluate the summaries and select the best one whereas k LLMs are used for decentralized multi-LLM summarization. Overall, we find that our multi-LLM summarization approaches significantly outperform the baselines that leverage only a single LLM by up to 3x. These results indicate the effectiveness of multi-LLM approaches for summarization.
+
+---
+
+## Case 19 — [FP] (row 177)
 
 **Title:** Self-Instruct: Aligning Language Models with Self-Generated Instructions
 
@@ -222,27 +234,14 @@ Categories: **TP** = gold yes, pred yes  •  **TN** = gold no, pred no  •  **
 
 ---
 
-## Case 19 — [FP] (row 114)
+## Case 20 — [FP] (row 197)
 
-**Title:** Diversity is the Key: Enhancing {LLM}-based Post-processing for Automated Audio Captioning
-
-**Gold label:** `no`  •  **Predicted:** `yes`
-
-**Abstract:**
-
-> Automated Audio Captioning (AAC) is a multimodal task aimed at generating natural language descriptions of audio content. Previous studies have shown that LLMs can improve AAC performance by summarizing audio events based on a list of candidate captions, which are selected by an external reranker from those generated using Nucleus Sampling. However, the reranking process often selects overly similar captions, disregarding the original diversity of the sampled captions. In this work, we show that this diversity reflects the AAC model{'}s level of certainty and propose a lightweight candidate selection approach that preserves the initial diversity of the generated captions. This, in turn, enables an LLM to summarize the captions while considering the AAC model{'}s certainty in a few-shot setting. Experimental results demonstrate that our method outperforms previous post-processing techniques while being significantly faster.
-
----
-
-## Case 20 — [FP] (row 149)
-
-**Title:** Learning and Enforcing Context-Sensitive Control for {LLM}s
+**Title:** {ACLM}: A Selective-Denoising based Generative Data Augmentation Approach for Low-Resource Complex {NER}
 
 **Gold label:** `no`  •  **Predicted:** `yes`
 
 **Abstract:**
 
-> Controlling the output of Large Language Models (LLMs) through context-sensitive constraints has emerged as a promising approach to overcome the limitations of Context-Free Grammars (CFGs) in guaranteeing generation validity. However, such constraints typically require manual specification{---}a significant barrier demanding specialized expertise. We introduce a framework that automatically learns context-sensitive constraints from LLM interactions through a two-phase process: syntactic exploration to gather diverse outputs for constraint learning, followed by constraint exploitation to enforce these learned rules during generation. Experiments demonstrate that our method enables even small LLMs (1B parameters) to learn and generate with perfect constraint adherence, outperforming larger counterparts and state-of-the-art reasoning models. This work represents the first integration of context-sensitive grammar learning with LLM generation, eliminating manual specification while maintaining generation validity.
+> Complex Named Entity Recognition (NER) is the task of detecting linguistically complex named entities in low-context text. In this paper, we present ACLM Attention-map aware keyword selection for Conditional Language Model fine-tuning), a novel data augmentation approach based on conditional generation, to address the data scarcity problem in low-resource complex NER. ACLM alleviates the context-entity mismatch issue, a problem existing NER data augmentation techniques suffer from and often generates incoherent augmentations by placing complex named entities in the wrong context. ACLM builds on BART and is optimized on a novel text reconstruction or denoising task - we use selective masking (aided by attention maps) to retain the named entities and certain keywords in the input sentence that provide contextually relevant additional knowledge or hints about the named entities. Compared with other data augmentation strategies, ACLM can generate more diverse and coherent augmentations preserving the true word sense of complex entities in the sentence. We demonstrate the effectiveness of ACLM both qualitatively and quantitatively on monolingual, cross-lingual, and multilingual complex NER across various low-resource settings. ACLM outperforms all our neural baselines by a significant margin (1{\%}-36{\%}). In addition, we demonstrate the application of ACLM to other domains that suffer from data scarcity (e.g., biomedical). In practice, ACLM generates more effective and factual augmentations for these domains than prior methods.
 
 ---
-
