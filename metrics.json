@@ -1,0 +1,22 @@
+{
+  "model": "gpt-5.4-mini",
+  "n_rows": 219,
+  "n_valid": 219,
+  "n_errors": 0,
+  "accuracy": 0.7579908675799086,
+  "precision_yes": 0.63,
+  "recall_yes": 0.7974683544303798,
+  "f1_yes": 0.7039106145251397,
+  "cohen_kappa": 0.5039955557454809,
+  "agreement_rate": 0.7579908675799086,
+  "confusion_matrix_yes_no": [
+    [
+      63,
+      16
+    ],
+    [
+      37,
+      103
+    ]
+  ]
+}
