@@ -1,0 +1,23 @@
+{
+  "prompt": "prompt1",
+  "model": "gpt-5.4-mini",
+  "n_rows": 219,
+  "n_valid": 219,
+  "n_errors": 0,
+  "accuracy": 0.726027397260274,
+  "precision_yes": 0.5826086956521739,
+  "recall_yes": 0.8481012658227848,
+  "f1_yes": 0.6907216494845361,
+  "cohen_kappa": 0.4596150682678072,
+  "agreement_rate": 0.726027397260274,
+  "confusion_matrix_yes_no": [
+    [
+      67,
+      12
+    ],
+    [
+      48,
+      92
+    ]
+  ]
+}
